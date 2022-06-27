@@ -19,7 +19,7 @@
 -- | A 'Rope' connects together various effect 'Strand's that get interlaced
 -- together.
 --
--- A 'Strand' is an effet with a parameter and an output. No constraint is
+-- A 'Strand' is an effect with a parameter and an output. No constraint is
 -- placed on the 'Strand', but once combined in a 'Rope', that 'Rope' will be
 -- an 'Arrow' and a 'Profunctor'. 'Strand's in a 'Rope' are named via labels to
 -- limit ambiguity.
