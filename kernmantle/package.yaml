@@ -19,7 +19,7 @@ dependencies:
 - base >= 4.7 && < 5
 - bifunctors
 - profunctors >= 5.5.2 # Needed to have the whole set of Cayley instances
-- vinyl >= 0.11
+- vinyl ^>= 0.14
 - transformers
 - safe-exceptions
 

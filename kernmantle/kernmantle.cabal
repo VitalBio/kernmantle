@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.35.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d1c11eb8ed7a64f130402199c56ee67fc4f5ca738808a5c3870b54c150f01bbf
+-- hash: 39f93f4ceca35feb0255c21f4263b8f67809a3835f8094bb19e499b9c0181208
 
 name:           kernmantle
 version:        0.1.0.0
@@ -42,7 +42,7 @@ library
     , profunctors >=5.5.2
     , safe-exceptions
     , transformers
-    , vinyl >=0.11
+    , vinyl ==0.14.*
   default-language: Haskell2010
 
 executable ex1
@@ -56,7 +56,7 @@ executable ex1
     , profunctors >=5.5.2
     , safe-exceptions
     , transformers
-    , vinyl >=0.11
+    , vinyl ==0.14.*
   default-language: Haskell2010
 
 executable exBypass
@@ -70,7 +70,7 @@ executable exBypass
     , profunctors >=5.5.2
     , safe-exceptions
     , transformers
-    , vinyl >=0.11
+    , vinyl ==0.14.*
   default-language: Haskell2010
 
 executable exCli
@@ -86,7 +86,7 @@ executable exCli
     , profunctors
     , safe-exceptions
     , transformers
-    , vinyl >=0.11
+    , vinyl ==0.14.*
   default-language: Haskell2010
 
 executable exLenses
@@ -104,5 +104,5 @@ executable exLenses
     , safe-exceptions
     , transformers
     , unordered-containers
-    , vinyl >=0.11
+    , vinyl ==0.14.*
   default-language: Haskell2010
