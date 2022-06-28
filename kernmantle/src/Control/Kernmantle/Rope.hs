@@ -277,7 +277,7 @@ weave'
   -- ^ An interpretation function for a 'Rope' with containing the given effect
   -- strand, transformed into the same Rope but with that effect woven in the
   -- core.
-weave' lbl interpFn = weave lbl (const interpFn)
+weave' lbl interpFn = weave lbl (\_ -> interpFn) -- const interpFn fails to typecheck due to subsumption
 {-# INLINE weave' #-}
 
 -- | A shortcut for 'weave'' when your core 'HasKleisli'
