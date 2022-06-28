@@ -41,7 +41,7 @@ interpFile :: a `File` b
               -- a binary effect constructed from a monadic effect, it's the
               -- prime way to lift IO actions in the Rope. No requirements are
               -- placed on the core.
-interpFile = strand #io . Kleisli . runFile
+interpFile fileEff = strand #io (Kleisli (runFile fileEff))
 
 -- | Just a shortcut to say our program can run in any rope that supports our
 -- effects and whose core implements ArrowChoice and allows us to catch
@@ -84,7 +84,7 @@ main = prog -- Rope ARec '[("warnConsole",Console),("console",Console),("file",F
                -- runConsole result just runs in IO. So we ask for a new #io
                -- strand to hold the interpreted console effects...
             -- Rope Rec '[("file",File),("io",Kleisli IO)] (Kleisli IO) String ()
-            & weave #file (\runRope -> runRope . loosen . interpFile)
+            & weave #file (\runRope fileEff -> runRope (loosen (interpFile fileEff)))
                -- ...that #io strand will be reused by the interpreted File
                -- effects...
             -- Rope Rec '[("io",Kleisli IO)] (Kleisli IO) String ()
